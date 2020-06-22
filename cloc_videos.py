@@ -9,7 +9,7 @@ def convert_milis(millis):
     h = millis / (1000 * 60 * 60)
     d = h / 24
     h %= 24
-    return d, h
+    return int(d), int(h)
 
 
 def load_db(path):
@@ -21,7 +21,7 @@ def load_db(path):
 
 
 def save_db(path, db):
-    if(len(db) <= 0):
+    if len(db) <= 0:
         return
 
     try:
@@ -34,13 +34,14 @@ def save_db(path, db):
 def dir_walk(start_dir):
     db_path = os.path.join(start_dir, ".cloc_videos_db")
     db = load_db(db_path)
-    if(len(db) > 0):
+    if len(db) > 0:
         print("Found cache at: {}".format(db_path))
 
     new_db = {}
-    files_num = 0
+    files_num, old_files_num = 0, len(db)
     total_duration = 0
     checked_files = 0
+    old_total_duration = sum(db.values())
     for root, dirs, files in os.walk(start_dir):
         for file in files:
             if checked_files % 200 == 0:
@@ -66,14 +67,25 @@ def dir_walk(start_dir):
                         break
 
     save_db(db_path, new_db)
-    return files_num, convert_milis(total_duration)
+    return (files_num, old_files_num), (total_duration, old_total_duration)
 
 
 def get_total_duration(path):
     print("Scanning {}".format(path))
-    files, (d, h) = dir_walk(path)
-    print("\nTotal videos: {}".format(files))
-    print("Total duration: {} days {} hours".format(int(d), int(h)))
+    (files, old_files), (total_milis, old_total_milis) = dir_walk(path)
+    print("\nTotal videos: {} ({}{})".format(
+        files,
+        "+" if files >= old_files else "",
+        files - old_files
+    ))
+    (d, h), (d_o, h_o) = convert_milis(total_milis), convert_milis(abs(total_milis-old_total_milis))
+    print("Total duration: {} days {} hours ({}{} days {} hours)".format(
+        d,
+        h,
+        "+" if total_milis >= old_total_milis else "-",
+        d_o,
+        h_o,
+    ))
 
 
 if __name__ == "__main__":

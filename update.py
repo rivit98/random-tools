@@ -17,83 +17,10 @@ DL_PATH = "./Filmy"
 
 itemsToDownload = [
     {
-        "fname": "chilltomatonoodle",
-        "link": "ytuser:ChiliTomatoNoodle"
+        "fname": "folder_name",
+        "link": "link",
+        "cid": 1
     },
-    {
-        "fname": "liveoverflow",
-        "link": "https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w"
-    },
-    {
-        "fname": "murmusctf",
-        "link": "https://www.youtube.com/channel/UCUB9vOGEUpw7IKJRoR4PK-A"
-    },
-    {
-        "fname": "ippsec",
-        "link": "https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA"
-    },
-    {
-        "fname": "oalabs",
-        "link": "https://www.youtube.com/channel/UC--DwaiMV-jtO-6EvmKOnqg"
-    },
-    {
-        "fname": "c++weekly",
-        "link": "https://www.youtube.com/user/lefticus1/videos"
-    },
-    {
-        "fname": "ghidra_ninja",
-        "link": "https://www.youtube.com/channel/UC3S8vxwRfqLBdIhgRlDRVzw"
-    },
-    {
-        "fname": "corecpp",
-        "link": "https://www.youtube.com/channel/UCE14XYFaK1fDTnOTqlOFrrQ"
-    },
-    {
-        "fname": "grysztar",
-        "link": "https://www.youtube.com/channel/UCs_OWSjmFntZqjzSpgJoBhA"
-    },
-    {
-        "fname": "nes_javid",
-        "link": "https://www.youtube.com/channel/UC-yuWVUplUJZvieEligKBkA/videos"
-    },
-    {
-        "fname": "nes_javid",
-        "link": "https://www.youtube.com/channel/UC77N7im6bfUPvR3PkRKaVGQ/videos"
-    },
-    {
-        "fname": "cherno",
-        "link": "https://www.youtube.com/channel/UCWBDJSwiF9YQGHdQ82rhw5g/videos",
-    },
-    {
-        "fname": "RetroGameMechanicsExplained",
-        "link": "https://www.youtube.com/channel/UCwRqWnW5ZkVaP_lZF7caZ-g/videos",
-    },
-    {
-	    "fname": "john_hammond",
-	    "link": "https://www.youtube.com/user/RootOfTheNull/videos"
-    },
-    {
-    	"fname": "cherno",
-    	"link": "https://www.youtube.com/user/TheChernoProject",
-    },
-
-    # {
-    # "cid": 0,
-    # "fname": "cppcon",
-    # "link": "https://www.youtube.com/user/CppCon"
-    # },
-    # {
-    # "cid": 0,
-    # "fname": "sentdex",
-    # "link": "https://www.youtube.com/user/sentdex"
-    # },
-    # {
-    # "cid": 0,
-    # "fname": "boostcon",
-    # "link": "https://www.youtube.com/user/BoostCon/videos"
-    # },
-
-    # 
 ]
 
 downloadedItems = []
