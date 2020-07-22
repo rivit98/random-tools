@@ -27,7 +27,7 @@ def findComments(path_string):
 
             # print(comment_contents)
 
-            with open("{}/{}.raw".format(output_dir, number), "wb") as f:
+            with open("{}/{}.bin".format(output_dir, number), "wb") as f:
                 f.write(comment_contents)
 
             number += 1
