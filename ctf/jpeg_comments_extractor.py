@@ -39,6 +39,7 @@ def findComments(path_string):
         except ValueError:
             break
 
+    print("Done! {} comments extracted".format(number))
 
 
 
