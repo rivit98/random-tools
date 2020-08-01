@@ -4,10 +4,14 @@ import sys
 def findComments(path_string):
     output_dir = "{}_extracted_comments".format(os.path.basename(path_string))
 
-    print("Extracting from [{}] to [{}]".format(path_string, output_dir))
-
     with open(path_string, "rb") as f:
         file_contents = f.read()
+
+    if file_contents[0:2] != b'\xff\xd8':
+        print("Not a jpeg file")
+        return
+
+    print("Extracting from [{}] to [{}]".format(path_string, output_dir))
 
     try:
         os.mkdir(output_dir)
