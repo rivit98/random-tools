@@ -1,0 +1,9 @@
+folder
+link
+
+folder2
+link2
+
+folder3_skip_downloading
+link3
+1

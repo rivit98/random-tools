@@ -5,12 +5,12 @@ import pickle
 from pymediainfo import MediaInfo
 
 
-def convert_milis(millis):
-    h = millis / (1000 * 60 * 60)
-    d = h / 24
-    h %= 24
-    return int(d), int(h)
-
+miliseconds_in_hour = 1000 * 60 * 60
+miliseconds_in_day = miliseconds_in_hour * 24
+def convert_milis(milis):
+    d = milis // miliseconds_in_day
+    h = (milis - (d * miliseconds_in_day)) // miliseconds_in_hour
+    return d, h
 
 def load_db(path):
     try:
@@ -93,4 +93,9 @@ if __name__ == "__main__":
         print("Usage: cloc_videos.py path")
         sys.exit(1)
 
-    get_total_duration(sys.argv[1])
+    path_ = sys.argv[1]
+    if not os.path.exists(path_):
+        print("No such directory: " + path_)
+        sys.exit(2)
+
+    get_total_duration(path_)
