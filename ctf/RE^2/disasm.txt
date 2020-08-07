@@ -1,0 +1,225 @@
+     0x0:                       PUSH [REG] BP
+     0x2:                       PUSH [REG] SP
+     0x4:                        POP [REG] BP
+     0x6:     LOADW [8-bit_OFFSET] ([REG]) BP 0x4
+     0x9:                        POP [REG] reg0
+     0xb:                 OUTPUTSTR [ADDR] 0x2006
+     0xe:                            INPUT 
+     0xf:                              DUP 
+    0x10:                        JZ [ADDR] 0x8022
+    0x13:                   STOREW ([REG]) reg0
+    0x15:                       PUSH [REG] reg0
+    0x17:               PUSH [8-bit_VALUE] 0x2
+    0x19:                              ADD 
+    0x1a:                        POP [REG] reg0
+    0x1c:                 OUTPUTSTR [ADDR] 0x2017
+    0x1f:                       JMP [ADDR] 0x800e
+    0x22:                       PUSH [REG] reg0
+    0x24:     LOADW [8-bit_OFFSET] ([REG]) BP 0x4
+    0x27:                              SUB 
+    0x28:                        POP [REG] reg0
+    0x2a:                       PUSH [REG] BP
+    0x2c:                        POP [REG] SP
+    0x2e:                        POP [REG] BP
+    0x30:                              RET 
+    0x31:                       PUSH [REG] BP
+    0x33:                       PUSH [REG] SP
+    0x35:                        POP [REG] BP
+    0x37:              PUSH [16-bit_VALUE] 0x2098
+    0x3a:                        POP [REG] SP
+    0x3c:                     LOADB [ADDR] 0x4b
+    0x3f:     LOADW [8-bit_OFFSET] ([REG]) IP 0x6
+    0x42:                       JMP [ADDR] 0x8047
+    0x45:     ************* wrong opcode: 0xb
+    0x46:                    STOREB [ADDR] 0xf50 0x0
+    0x49:     ************* wrong opcode: 0x6
+    0x4a:                       JMP [ADDR] 0x8051
+    0x4d:     ************* wrong opcode: 0x9
+    0x4e:     ************* wrong opcode: 0x8
+    0x4f:     ************* wrong opcode: 0x78
+    0x50:     ************* wrong opcode: 0x15
+    0x51:     LOADW [8-bit_OFFSET] ([REG]) IP 0xfffe
+    0x54:               PUSH [8-bit_VALUE] 0x0
+    0x56:                        POP [REG] reg3
+    0x58:                       PUSH [REG] IP
+    0x5a:                        POP [REG] reg4
+    0x5c:                       JMP [ADDR] 0x8080
+    0x5f:     ************* wrong opcode: 0x53
+    0x60:     ************* wrong opcode: 0x48
+    0x61:     LOADB [8-bit_OFFSET] ([REG]) 0x0 reg8
+    0x64:     ************* wrong opcode: 0x28
+    0x65:              PUSH [16-bit_VALUE] 0x4c42
+    0x68:                      CALL [ADDR] 0x487f
+    0x6b:     ************* wrong opcode: 0x17
+    0x6c:                              XOR 
+    0x6d:     ************* wrong opcode: 0x76
+    0x6e:     ************* wrong opcode: 0x60
+    0x6f:     LOADW [8-bit_OFFSET] ([REG]) reg4 0x13
+    0x72:                       PUSH [REG] reg4
+    0x74:               PUSH [8-bit_VALUE] 0x2
+    0x76:                              SUB 
+    0x77:                        POP [REG] reg4
+    0x79:                       PUSH [REG] reg3
+    0x7b:               PUSH [8-bit_VALUE] 0x2
+    0x7d:                              ADD 
+    0x7e:                        POP [REG] reg3
+    0x80:               PUSH [8-bit_VALUE] 0x10
+    0x82:                       PUSH [REG] reg3
+    0x84:                              SUB 
+    0x85:                        JP [ADDR] 0x806f
+    0x88:                     LOADW [ADDR] 0x8092
+    0x8b:                        POP [REG] reg3
+    0x8d:                    LOADW ([REG]) 0x0 reg3
+    0x8f:                       JMP [ADDR] 0x8094
+    0x92:              PUSH [16-bit_VALUE] 0x3d47
+    0x95:     ************* wrong opcode: 0x73
+    0x96:                              DUP 
+    0x97:               PUSH [8-bit_VALUE] 0x1
+    0x99:                              ADD 
+    0x9a:               PUSH [8-bit_VALUE] 0x8
+    0x9c:                              SHL 
+    0x9d:                               OR 
+    0x9e:     LOADW [8-bit_OFFSET] ([REG]) IP 0x6
+    0xa1:                       JMP [ADDR] 0x80a6
+    0xa4:     ************* wrong opcode: 0x76
+    0xa5:                     CALL ([REG]) reg11
+    0xa7:                              RET 
+    0xa8:                        POP [REG] SP
+    0xaa:                        POP [REG] BP
+    0xac:                              RET 
+    0xad:                       PUSH [REG] BP
+    0xaf:                       PUSH [REG] SP
+    0xb1:                        POP [REG] BP
+    0xb3:               PUSH [8-bit_VALUE] 0x0
+    0xb5:                              DUP 
+    0xb6:                        POP [REG] reg3
+    0xb8:                       JMP [ADDR] 0x80d3
+    0xbb:                              DUP 
+    0xbc:                              DUP 
+    0xbd:     LOADW [8-bit_OFFSET] ([REG]) BP 0x6
+    0xc0:                              ADD 
+    0xc1:                        POP [REG] reg0
+    0xc3:     LOADW [8-bit_OFFSET] ([REG]) BP 0x8
+    0xc6:                              ADD 
+    0xc7:                        POP [REG] reg4
+    0xc9:                    LOADB ([REG]) reg4
+    0xcb:                   STOREB ([REG]) reg0
+    0xcd:               PUSH [8-bit_VALUE] 0x1
+    0xcf:                              ADD 
+    0xd0:                              DUP 
+    0xd1:                        POP [REG] reg3
+    0xd3:                              DUP 
+    0xd4:     LOADW [8-bit_OFFSET] ([REG]) BP 0x4
+    0xd7:                              SUB 
+    0xd8:                        JN [ADDR] 0x80bb
+    0xdb:                              POP 
+    0xdc:     LOADW [8-bit_OFFSET] ([REG]) BP 0x6
+    0xdf:                        POP [REG] reg0
+    0xe1:                       PUSH [REG] BP
+    0xe3:                        POP [REG] SP
+    0xe5:                        POP [REG] BP
+    0xe7:                              RET 
+    0xe8:              PUSH [16-bit_VALUE] 0x5000
+    0xeb:                      CALL [ADDR] 0x8000
+    0xee:              PUSH [16-bit_VALUE] 0x6000
+    0xf1:                       PUSH [REG] reg0
+    0xf3:                              DUP 
+    0xf4:                        POP [REG] reg1
+    0xf6:                      CALL [ADDR] 0x80ad
+    0xf9:                              POP 
+    0xfa:                 OUTPUTSTR [ADDR] 0x2000
+    0xfd:                            INPUT 
+    0xfe:                      CALL [ADDR] 0x817f
+   0x101:                              POP 
+   0x102:              PUSH [16-bit_VALUE] 0x2046
+   0x105:                      CALL [ADDR] 0x8144
+   0x108:                              POP 
+   0x109:                        POP [REG] reg2
+   0x10b:                      CALL [ADDR] 0x8031
+   0x10e:              PUSH [16-bit_VALUE] 0x207a
+   0x111:                              DUP 
+   0x112:                        POP [REG] reg5
+   0x114:                    LOADB ([REG]) reg5
+   0x116:                              DUP 
+   0x117:                        JZ [ADDR] 0x812d
+   0x11a:                       JMP [ADDR] 0x81bc
+   0x11d:                              SUB 
+   0x11e:                       JNZ [ADDR] 0x813c
+   0x121:               PUSH [8-bit_VALUE] 0x1
+   0x123:                              DUP 
+   0x124:                       PUSH [REG] reg2
+   0x126:                              ADD 
+   0x127:                        POP [REG] reg2
+   0x129:                              ADD 
+   0x12a:                       JMP [ADDR] 0x8111
+   0x12d:                              POP 
+   0x12e:                 OUTPUTSTR [ADDR] 0x201e
+   0x131:                    LOADW ([REG]) 0x0 SP
+   0x133:                        POP [REG] reg2
+   0x135:                              POP 
+   0x136:                 OUTPUTSTR [ADDR] 0x5000
+   0x139:         EXIT [16-bit_STATUSCODE] 0x0
+   0x13c:                 OUTPUTSTR [ADDR] 0x2036
+   0x13f:                       PUSH [REG] reg2
+   0x141:                       JMP [ADDR] 0x8139
+   0x144:                       PUSH [REG] BP
+   0x146:                       PUSH [REG] SP
+   0x148:                        POP [REG] BP
+   0x14a:               PUSH [8-bit_VALUE] 0x0
+   0x14c:                       JMP [ADDR] 0x8167
+   0x14f:     LOADW [8-bit_OFFSET] ([REG]) BP 0x6
+   0x152:                              ADD 
+   0x153:                    LOADB ([REG]) SP
+   0x155:              PUSH [16-bit_VALUE] 0x4f00
+   0x158:     LOADW [8-bit_OFFSET] ([REG]) BP 0xfffe
+   0x15b:                              ADD 
+   0x15c:                   STOREB ([REG]) SP
+   0x15e:     LOADW [8-bit_OFFSET] ([REG]) BP 0xfffe
+   0x161:               PUSH [8-bit_VALUE] 0x1
+   0x163:                              ADD 
+   0x164:    STOREW [8-bit_OFFSET] ([REG]) 0xfffe BP
+   0x167:     LOADW [8-bit_OFFSET] ([REG]) BP 0x4
+   0x16a:     LOADW [8-bit_OFFSET] ([REG]) BP 0xfffe
+   0x16d:                              ADD 
+   0x16e:                    LOADB ([REG]) SP
+   0x170:                              DUP 
+   0x171:               PUSH [8-bit_VALUE] 0x1
+   0x173:                              ADD 
+   0x174:                        JP [ADDR] 0x814f
+   0x177:                              POP 
+   0x178:                       PUSH [REG] BP
+   0x17a:                        POP [REG] SP
+   0x17c:                        POP [REG] BP
+   0x17e:                              RET 
+   0x17f:                       PUSH [REG] BP
+   0x181:                       PUSH [REG] SP
+   0x183:                        POP [REG] BP
+   0x185:     LOADW [8-bit_OFFSET] ([REG]) BP 0x4
+   0x188:               PUSH [8-bit_VALUE] 0x0
+   0x18a:                       JMP [ADDR] 0x81a4
+   0x18d:     LOADW [8-bit_OFFSET] ([REG]) BP 0xfffe
+   0x190:                              XOR 
+   0x191:                   STOREB ([REG]) reg0
+   0x193:               PUSH [8-bit_VALUE] 0x1
+   0x195:                              DUP 
+   0x196:     LOADW [8-bit_OFFSET] ([REG]) BP 0xfffe
+   0x199:                              ADD 
+   0x19a:    STOREW [8-bit_OFFSET] ([REG]) 0xfffe BP
+   0x19d:     LOADW [8-bit_OFFSET] ([REG]) BP 0xfffc
+   0x1a0:                              ADD 
+   0x1a1:    STOREW [8-bit_OFFSET] ([REG]) 0xfffc BP
+   0x1a4:     LOADW [8-bit_OFFSET] ([REG]) BP 0x6
+   0x1a7:     LOADW [8-bit_OFFSET] ([REG]) BP 0xfffc
+   0x1aa:                              ADD 
+   0x1ab:                              DUP 
+   0x1ac:                        POP [REG] reg0
+   0x1ae:                    LOADB ([REG]) reg0
+   0x1b0:                              DUP 
+   0x1b1:                       JNZ [ADDR] 0x818d
+   0x1b4:                              POP 
+   0x1b5:                       PUSH [REG] BP
+   0x1b7:                        POP [REG] SP
+   0x1b9:                        POP [REG] BP
+   0x1bb:                              RET 
+   0x1bc:                    LOADB ([REG]) reg2
+   0x1be:                       JMP [ADDR] 0x811d
