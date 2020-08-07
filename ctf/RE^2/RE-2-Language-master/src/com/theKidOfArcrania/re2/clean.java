@@ -349,7 +349,7 @@ class clean {
     }
 
     public static int inputIdx = 0;
-    public static short[] inputValues = {0x6c66, 0x6761, 0x527b, 0x5f45, 0x3174, 0x336d, 0x5f73, 0x4552, 0x695f, 0x5f35, 0x4552, 0x325e, 0x2121, 0x7d21,
+    public static short[] inputValues = {0x7d21,
             0, 0x10};
 
     private static void outputString(int addr)
