@@ -4,13 +4,15 @@ import base64
 import pickle
 from pymediainfo import MediaInfo
 
-
 miliseconds_in_hour = 1000 * 60 * 60
 miliseconds_in_day = miliseconds_in_hour * 24
+
+
 def convert_milis(milis):
     d = milis // miliseconds_in_day
     h = (milis - (d * miliseconds_in_day)) // miliseconds_in_hour
     return d, h
+
 
 def load_db(path):
     try:
@@ -73,19 +75,26 @@ def dir_walk(start_dir):
 def get_total_duration(path):
     print("Scanning {}".format(path))
     (files, old_files), (total_milis, old_total_milis) = dir_walk(path)
-    print("\nTotal videos: {} ({}{})".format(
-        files,
-        "+" if files >= old_files else "",
-        files - old_files
-    ))
-    (d, h), (d_o, h_o) = convert_milis(total_milis), convert_milis(abs(total_milis-old_total_milis))
-    print("Total duration: {} days {} hours ({}{} days {} hours)".format(
-        d,
-        h,
-        "+" if total_milis >= old_total_milis else "-",
-        d_o,
-        h_o,
-    ))
+    files_diff = files - old_files
+    output_string = "\nTotal videos: {}".format(files)
+    if files_diff != 0:
+        output_string += " ({}{})".format(
+            "+" if files >= old_files else "",
+            files_diff
+        )
+    print(output_string + '\n')
+
+    (d, h), (d_o, h_o) = convert_milis(total_milis), convert_milis(abs(total_milis - old_total_milis))
+    output_string = "Total duration: {} days {} hours".format(d, h)
+
+    if d_o != 0 or h_o != 0:
+        output_string += " ({}{}{} hours)".format(
+            "+" if total_milis >= old_total_milis else "-",
+            "{} days ".format(d_o) if d_o > 0 else "",
+            h_o,
+        )
+
+    print(output_string + '\n')
 
 
 if __name__ == "__main__":
