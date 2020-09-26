@@ -82,7 +82,7 @@ def get_total_duration(path):
             "+" if files >= old_files else "",
             files_diff
         )
-    print(output_string + '\n')
+    print(output_string)
 
     (d, h), (d_o, h_o) = convert_milis(total_milis), convert_milis(abs(total_milis - old_total_milis))
     output_string = "Total duration: {} days {} hours".format(d, h)
@@ -94,7 +94,7 @@ def get_total_duration(path):
             h_o,
         )
 
-    print(output_string + '\n')
+    print(output_string)
 
 
 if __name__ == "__main__":
