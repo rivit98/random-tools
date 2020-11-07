@@ -6,3 +6,4 @@
 - [QR from binary and hex](https://bahamas10.github.io/binary-to-qrcode/)
 - [JPEG/PNG stego checker](https://github.com/DominicBreuker/stego-toolkit)
 - [USB Rubber Ducky](https://github.com/hak5darren/USB-Rubber-Ducky)
+- [Encyclopedia of Integer Sequences](https://oeis.org/)
