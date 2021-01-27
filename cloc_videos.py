@@ -3,7 +3,14 @@ import os
 import base64
 import pickle
 from pymediainfo import MediaInfo
+import logging
 
+cloc_logger = logging.getLogger('cloc-logger')
+cloc_fileHandler = logging.FileHandler('history.log')
+cloc_logger.addHandler(cloc_fileHandler)
+cloc_logger.setLevel(logging.INFO)
+formatter = logging.Formatter("%(asctime)s | %(message)s", "%Y-%m-%d %H:%M:%S")
+cloc_fileHandler.setFormatter(formatter)
 miliseconds_in_hour = 1000 * 60 * 60
 miliseconds_in_day = miliseconds_in_hour * 24
 
@@ -30,7 +37,7 @@ def save_db(path, db):
         with open(path, "wb") as f:
             pickle.dump(db, f)
     except:
-        pass
+        print("Cannot save DB", path)
 
 
 def dir_walk(start_dir):
@@ -72,17 +79,19 @@ def dir_walk(start_dir):
     return (files_num, old_files_num), (total_duration, old_total_duration)
 
 
+
 def get_total_duration(path):
     print("Scanning {}".format(path))
     (files, old_files), (total_milis, old_total_milis) = dir_walk(path)
     files_diff = files - old_files
-    output_string = "\nTotal videos: {}".format(files)
+    output_string = "Total videos: {}".format(files)
     if files_diff != 0:
         output_string += " ({}{})".format(
             "+" if files >= old_files else "",
             files_diff
         )
-    print(output_string)
+    print('\n' + output_string)
+    cloc_logger.info(output_string)
 
     (d, h), (d_o, h_o) = convert_milis(total_milis), convert_milis(abs(total_milis - old_total_milis))
     output_string = "Total duration: {} days {} hours".format(d, h)
@@ -95,6 +104,7 @@ def get_total_duration(path):
         )
 
     print(output_string)
+    cloc_logger.info(output_string)
 
 
 if __name__ == "__main__":
